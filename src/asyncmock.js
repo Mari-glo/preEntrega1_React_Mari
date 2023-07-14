@@ -19,3 +19,12 @@ export const getProductos = () => {
         }, 2000)
     })
 }
+export const getUnProducto = (id) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            const producto = misProductos.find(prod => prod.id === id);
+            resolve(producto);
+        }, 2000)
+        
+    })
+}
