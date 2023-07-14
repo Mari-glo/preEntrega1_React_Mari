@@ -15,15 +15,15 @@ const NavBar = () => {
                     
                 </li>
                 <li>
-                    <NavLink to="/Vestuario">Vestuario</NavLink>
+                    <NavLink to="/categoria/1">Vestuario</NavLink>
                     
                 </li>
                 <li>
-                    <NavLink to="/Accesorios">Accesorios</NavLink>
+                    <NavLink to="/categoria/2">Accesorios</NavLink>
                     
                 </li>
                 <li>
-                    <NavLink to="/Decoracion">Decoración</NavLink>
+                    <NavLink to="/categoria/3">Decoración</NavLink>
                     
                 </li>
              </ul>

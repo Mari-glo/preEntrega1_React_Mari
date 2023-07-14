@@ -1,9 +1,5 @@
 import NavBar from './componentes/NavBar/NavBar';
-import Home from './componentes/Home/home';
-import Accesorios from './componentes/Accesorios/Accesorios';
-import Vestuario from './componentes/Vestuario/vestuario';
-import Decoracion from './componentes/Decoracion/decoracion';
-//import ItemCount from './componentes/ItemCount/ItemCount';
+import ItemCount from './componentes/ItemCount/ItemCount';
 import './App.css';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import ItemDetalContainer from './componentes/ItemDetailContainer/ItemDetalContainer';
@@ -16,14 +12,15 @@ const App = () => {
 
   return (
     <div>
+      
 
       <BrowserRouter>
         <NavBar />
+        <h1>{saludo}</h1>
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path= "/Accesorios" element={<Accesorios/>}/>
-            <Route path= "/Vestuario" element={<Vestuario/>}/>
-            <Route path= "/Decoracion" element={<Decoracion/>}/>
+            <Route path="/" element={<ItemListContainer/>} />
+            <Route path= "/categoria/:idCategoria" element={<ItemListContainer/>}/>
+            <Route path= "/item/:idItem" element={<ItemDetalContainer/>}/>
             <Route path= "*" element={<h3>no por ahora</h3>}/>
 
 
@@ -31,12 +28,9 @@ const App = () => {
       
       </BrowserRouter>
 
+        
       
-      <h1>{saludo}</h1>
-      <ItemListContainer greeting={" Tejidos y Creaciones "} />
-      <ItemDetalContainer/>
-
-
+      
     </div>
   )
 }
