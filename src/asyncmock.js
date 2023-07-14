@@ -24,7 +24,7 @@ export const getUnProducto = (id) => {
         setTimeout(() => {
             const producto = misProductos.find(prod => prod.id === id);
             resolve(producto);
-        }, 2000)
+        }, 4000)
         
     })
 }
