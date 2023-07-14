@@ -1,28 +1,46 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const ItemCount = () => {
-    const [contador, setContador] = useState(1)
+const ItemCount = ({ stock, inicial }) => {
+    const [contador, setContador] = useState(inicial);
+    const [color, setColor] =useState ("black");
+
+    useEffect(() => {
+        document.title = `Contador:${contador}`;
+        if(contador === stock){
+            setColor ("red");
+         } else {
+            setColor("black");
+         }
+
+
+    }, [contador])
 
     const aumentar = () => {
-        if(contador < 8) {
+        if (contador < stock) {
             setContador(contador + 1);
         }
     }
-    
+
     const disminuir = () => {
-        if(contador > 1) {
-            setContador(contador -1);
+        if (contador > inicial) {
+            setContador(contador - 1);
         }
     }
 
+    const afregarAlCanasto = () => {
+        console.log(`Agregaste ${contador} Productos`);
+    }
 
-  return (
-    <div>
-        <button onClick={disminuir}> - </button>
-        <p>{contador}</p>
-        <button onClick={aumentar}> + </button>
-    </div>
-  )
+
+    return (
+        <div>
+            <button onClick={disminuir}> - </button>
+            <p>{contador}</p>
+            <button onClick={aumentar}> + </button>
+            <br />
+            <button onClick={afregarAlCanasto} style={{color:color}}>Agregar al canasto</button>
+        </div>
+    )
 }
 
 export default ItemCount
