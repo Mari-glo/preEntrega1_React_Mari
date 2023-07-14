@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const ItemCount = ({ stock, inicial }) => {
+export const ItemCount = ({ stock, inicial }) => {
     const [contador, setContador] = useState(inicial);
     const [color, setColor] =useState ("black");
 

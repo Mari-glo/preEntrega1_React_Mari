@@ -1,4 +1,5 @@
 import './ItemDetail.css';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({id, nombre, valor, img}) => {
   return (
@@ -7,6 +8,11 @@ const ItemDetail = ({id, nombre, valor, img}) => {
         <h4>Valor: {valor} </h4>
         <p>descripción: Producto Artesanal hecho con amor, lana 100% algodón, relleno hipoalergénico</p>
         <img src={img} alt={nombre} />
+
+        <ItemCount/>
+        
+
+        
 
     </div>
   )
